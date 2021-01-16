@@ -1,0 +1,15 @@
+{
+  "name": "ma-petite-note",
+  "version": "1.0.0",
+  "description": "_Take your notes on the go. Saved locally in the browser. Export to .txt files or send by email._",
+  "main": "index.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "snowpack": "^3.0.11"
+  }
+}
