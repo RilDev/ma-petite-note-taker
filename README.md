@@ -13,4 +13,4 @@ _Take your notes on the go. Saved locally in the browser. Export to .txt files o
 - [ ] multiple files save option
 - [ ] add counter showing how many bits are still available in the local storage
 - [ ] optimize lighthouse
-- [ ] pwa
+- [x] pwa

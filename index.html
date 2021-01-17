@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ma Petite Note Taker">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Raleway&display=swap" rel="stylesheet">
 
     <title>Ma Petite Note</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#fcfcfc" />
+    <link rel="apple-touch-icon" href="icons/ma-petite-note-taker-icon-152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffdbe9">
+    <meta name="apple-mobile-web-app-title" content="Ma Petite Note Taker">
+    <meta name="msapplication-TileImage" content="icons/ma-petite-note-taker-icon-144.png">
+    <meta name="msapplication-TileColor" content="#ffdbe9">
 
     <style>
         * {
@@ -19,6 +36,7 @@
             display: flex;
             background: #fcfcfc;
             color: #262626;
+            padding: 40px 20px 100px;
         }
 
         main {
@@ -26,7 +44,6 @@
             width: 100%;
             height: 100vh;
             margin: 0 auto;
-            padding: 40px 20px 100px;
             display: flex;
             flex-direction: column;
         }
@@ -114,5 +131,18 @@
 
       document.body.removeChild(element);
     };
+
+    // register service worker
+    // check if service worker available in navigator
+    if ('serviceWorker' in navigator) {
+        // load service worker
+        window.addEventListener('load', async() => {
+            try {
+                const registration = await navigator.serviceWorker.register('./service-worker.js');
+            } catch (error) {
+                console.log('Failure: ', error)
+            }
+        })
+    }
   </script>
 </html>
